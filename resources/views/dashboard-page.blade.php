@@ -111,7 +111,6 @@
                         <!-- hidden buttons in left canvas -->
                         <button class="btnAllClass" onclick="internalButtons('MonthlyExam')">Monthly Exam Result</button>
                         <button class="btnAllClass" onclick="internalButtons('OnlineExam')">Online Exam Result</button>
-                        <!-- <button class="btnAllClass" onclick="internalButtons()">Annual Exam Result</button> -->
                     </div>
                 </div>
                 <div class="leftOffNavDivs">
@@ -137,12 +136,6 @@
     <script src="{{URL::asset('js-container/dashboardPage.js')}}"></script>
 </body>
 </html>
-<?php 
-    // }
-    // else{
-    //     echo "<script>window.location.replace('newSch.php')</script>";
-    // }
-?>
 
 
 
