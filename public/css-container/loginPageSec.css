@@ -1,0 +1,215 @@
+/* --------Div of all Content related to student details------- */
+body{
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none;
+}
+.fullBurgerDiv{
+    width: 100%;
+    height: 58px; 
+    background: linear-gradient(to right,#85f0f1 20%, #89fffd 80%);
+    padding: 10px 10px;
+    position: fixed;
+    display: block;
+    top: 0;
+    box-shadow: 0 0 10px 1px rgba(156, 156, 156, 0.2), 0 6px 20px 0 rgba(158, 158, 158, 0.19);
+}
+.allContentMainDiv{
+    width: auto;
+    /* min-width: 100vh; */
+    height: 100%;
+    min-height: 100vh;
+    position: relative;
+    background-color: #F5F5F5;
+    margin-top: 50px;
+    margin-left: 73px;
+    /* overflow-x: hidden; */
+    padding: 10px 0;
+    transition: margin-left 0.2s ease-out;
+    box-shadow: 0 0 10px 1px rgba(156, 156, 156, 0.2), 0 6px 20px 0 rgba(158, 158, 158, 0.19) inset;
+}
+.allContentMainDivToggle{
+    margin-left: 250px;
+    position: relative;
+    transition: margin-left 0.2s ease-out;
+}
+.contentBoxTop{
+    width: 100%;
+    height: auto;
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.contentTop1{
+    width: 26%;
+    min-height: 80px;
+    margin: 20px 0;
+    padding: 0 20px;
+    background-color: #bcecec;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-evenly;
+}
+.contentBoxTop .contentTop1 > span{
+    display: inherit;
+    justify-content: space-between;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    line-break: auto;
+    text-overflow: ellipsis;
+    text-align-last: left;
+}
+.contentBoxTop .studentDetailBox{
+    width: 26%;
+    min-height: 90px;
+    background-color: white;
+    border-radius: 5px;
+    padding-right: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    box-shadow: 0 0 10px 1px rgba(156, 156, 156, 0.2), 0 6px 20px 0 rgba(158, 158, 158, 0.19);
+}
+.contentBoxTop .studentDetailBox > span{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.contentBoxTop .studentDetailBox .progress{
+    margin-bottom: 8px;
+    width: 70%;
+}
+/* -------------------log out box--------------- */
+.logoutClipDiv .chip {
+    display: inline-block;
+    padding: 3px 20px;
+    height: 50px;
+    margin-top: -5px;
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    line-height: 50px;
+    border-radius: 30px;
+    /*background: linear-gradient(to right, #33ccff 0%, #3fffef 60%, #33ccff 100%);*/
+  }
+  .chip img {
+    float: left;
+    margin: 0 10px 0 -25px;
+    height: 43px;
+    width: 43px;
+    border-radius: 50%;
+    background-color: rgb(252, 252, 252);
+  }
+  .result_percent{
+    position: absolute;
+    margin-top: -38px;
+    margin-right: -120px;
+    color: red;
+  }
+  .logoutClipDiv{
+      float: right;
+      margin-right: 10px;
+      cursor: pointer;
+  }
+  .logoutBoxContainer{
+      width: 300px;
+      height: auto;
+      border-radius: 8px;
+      overflow: hidden;
+      z-index: 200 !important;
+      top: -220px;
+      right: 120px;
+      position: absolute;
+      box-shadow: 0 0 6px 1px rgba(156, 156, 156, 0.2), 0 6px 20px 0 rgba(158, 158, 158, 0.19);
+      transition: top 0.3s linear;
+  }
+  .logoutBoxContainerToggle{
+      top: 100px;
+      position: fixed;
+      transition: top 0.3s linear;
+  }
+  .firstLogoutDiv{
+      height: 120px;
+      width: 100%;
+      background: linear-gradient(to right, #33ccff 0%, #c2f6ff 50%, #33ccff 100%);
+      display: flex;
+      align-items: center;
+      padding: 20px 15px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 17px;
+      color: rgb(125, 71, 71);
+  }
+  .secLogoutDiv{
+      /* height: 80px; */
+      width: 100%;
+      background-color: white;
+  }
+  .secLogoutDiv .buttonLogout1{
+      border: none; 
+      display: inline-flex; 
+      font-size: 15px; 
+      margin: 20px;
+      padding: 7px 10px;
+      background-color: rgb(67, 66, 66);
+      border-radius: 20px;
+      color: white;
+  }
+  .secLogoutDiv .buttonLogout1:hover{
+      background-color: rgb(140, 140, 140);
+      color: rgb(255, 255, 255);
+  }
+  .secLogoutDiv .buttonLogout2{
+      float: right; 
+      color: black; 
+      background-color: transparent;
+      border: none; 
+      display: inline-flex; 
+      font-size: 15px; 
+      margin: 20px;
+      padding: 7px 10px;
+  }
+  .chipsideText{
+      display: inline-block;
+      font-size: 16px; 
+      letter-spacing: 1px;
+      color: white; 
+      font-family: Arial, Helvetica, sans-serif; 
+      text-shadow: 
+       1px 0px 0px black,   
+       -1px 0px 0px black, 
+       0px 1px 0px black, 
+       0px -1px 0px black;
+  }
+  .secLogoutDiv .buttonLogout2:hover{
+      color: rgb(0, 0, 255);
+  }
+@media only screen and (max-width: 900px) {
+    .allContentMainDiv{
+        margin-left: 0px;
+    }
+    .contentBoxTop{
+        flex-direction: column;
+    }
+    .chipsideText{
+        display:none;
+    }
+    .contentTop1{
+        width: 85%;
+        margin: 10px 0;
+        padding: 10px 20px;
+    }
+    .contentTop1 > span{
+        flex-direction: column;
+        text-align: left;
+        padding: 3px 0;
+        color: rgb(88, 88, 88);
+    }
+    .contentBoxTop .studentDetailBox{
+        width: 85%;
+        margin: 7px 0 10px 0;
+    }
+    .logoutBoxContainer{
+        width: 95%;
+        right: 0px;
+        margin: 0 2%;
+    }
+}

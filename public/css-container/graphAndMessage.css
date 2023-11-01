@@ -1,0 +1,265 @@
+body{
+    padding: 0;
+    margin: 0;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none;
+}
+.tableOfAddtendenceBlock{
+    width: 90%;
+    max-width: 100%;
+    cursor: pointer;
+    margin: 40px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 10px 18px 20px 18px; */
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0 10px 1px rgba(156, 156, 156, 0.2), 0 6px 20px 0 rgba(158, 158, 158, 0.19);
+}
+.containerMainAttandance{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.containerMainAttandance header{
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid rgb(144, 144, 144);
+    margin-bottom: 6.5px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.tableOfAddtendenceBlock table{
+    /* min-width: 550px; */
+    margin: 20px 20px;
+}
+.progressBarClass{
+    width: 500px;
+    /* max-width: 550px; */
+    padding: 5px 2px;
+    border-top: 1px solid rgb(207, 207, 207);
+}
+.progressBarLast{
+    border-bottom: 2px solid rgb(49, 49, 49);
+}
+.progress{
+    height: 22px;
+    border-radius: 0;
+    background-color: transparent;
+}
+.progress-bar{
+    border-end-end-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: 3399ff;
+}
+.progress-bar:hover{
+    background: linear-gradient(to right, #0066ff 0%, #00ffff 100%);
+}
+.progressBarLast2{
+    width: auto;
+    display: flex;
+    padding: 0;
+}
+.progressBarLast2 > span{
+    width: 20%;
+    height: 5px;
+    border-right: 2px solid black;
+    text-align: right;
+}
+.progressBarLast2 > span p{
+    transform: translateX(10px);
+}
+.tableOfAddtendenceBlock .messageInformationBox{
+    /* min-width: 380px; */
+    max-width: 900px;
+    height: 220px;
+    box-shadow: 0 0 10px 1px rgba(156, 156, 156, 0.2), 0 6px 20px 0 rgba(158, 158, 158, 0.19);
+    margin: 22.5px 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.messageInformationBox header{
+    width: 100%;
+    height: 50px;
+    background-image: radial-gradient(#f2f2f2 30%, #ccffff 70%);
+    text-align: center;
+    padding-top: 14px;
+    border-bottom: 1px solid grey;
+}
+.messageInformationBox header > span{
+    display: block;
+    width: 0;
+    margin: -5px auto 0 auto;
+    /* z-index: 2 !important; */
+    border: 1.5px solid rgb(154, 154, 154);
+    transition: 0.5s ease-out;
+}
+.messageInformationBox:hover header > span{
+    width: 100%;
+}
+.messageInformationBox div{
+    width: 100%;
+    display: block;
+    height: 100%;
+    min-height: 80px;
+    overflow: auto;
+    justify-content: center;
+    align-items: center;
+}
+.messageInformationBox div .messageBox{
+    width: 92%;
+    height: auto;
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: row;
+    margin: 15px auto;
+    border-radius: 7px;
+    background-color: rgb(230, 230, 230);
+}
+.messageInformationBox div .messageBox .messageBoxImage{
+    width: 88px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    overflow: hidden;
+    margin-right: 6px;
+}
+.messageInformationBox div .messageBox .messageBoxContent{
+    width: 100%;
+    height: auto;
+    border-radius: 7px;
+    padding: 10px 10px;
+    background-color: aqua;
+}
+::-webkit-scrollbar {
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(227, 227, 227);
+    border-radius: 20px;
+    height: 100px;
+}
+.allTeacherInfoContain1{
+    width: 90%;
+    min-height: 120px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 20px auto;
+    /* padding: 20px 0; */
+    display: flex;
+    justify-content: space-evenly;
+    box-shadow: 0 0 10px 1px rgba(156, 156, 156, 0.2), 0 6px 20px 0 rgba(158, 158, 158, 0.19);
+}
+.allTeacherInfoContain1 .allInfoInternalBox1{
+    width: 35%;
+    background-color: #ffffff;
+    margin: 0 auto;
+    padding: 10px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.allTeacherInfoContain1 .allInfoInternalBox2{
+    width: 65%;
+    background-color: #ffffff;
+    margin: 0 auto;
+    padding: 10px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.allInfoInternalBox2 button{
+    width: 78px;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 4px;
+    background-color: #33adff;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    right: 0;
+}
+.allInfoInternalBox2 .smallBoxAttend{
+    display: inherit;
+    justify-content: space-evenly;
+    margin: 20px 0;
+}
+.allInfoInternalBox2 .smallBoxAttend span span{
+    border-radius: 43%; 
+    width: 35px; 
+    height: 25px; 
+    display: inline-block;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+.allInfoInternalBox2 .progress-bar:hover{
+    background: linear-gradient(to right, transparent 0%, #00ffff 100%);
+}
+.toggleColorOfSeeButton{
+    background-color: #ff3333 !important;
+}
+@media only screen and (max-width: 1400px) {
+    .tableOfAddtendenceBlock{
+        width: 90%;
+        flex-direction: column;
+    }
+    .tableOfAddtendenceBlock .messageInformationBox{
+        min-width: 74%;
+    }
+    .messageInformationBox header{
+        padding-top: 17px;
+    }
+    .tableOfAddtendenceBlock table{
+        min-width: fit-content;
+    }
+    .allInfoInternalBox2 > span{
+        min-width: 210px !important;
+    }
+}
+@media only screen and (max-width: 1006px) {
+    .allTeacherInfoContain1{
+        flex-direction: column;
+    }
+    .allTeacherInfoContain1 .allInfoInternalBox1{
+        width: 100%;
+    }
+    .allTeacherInfoContain1 .allInfoInternalBox2{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .tableOfAddtendenceBlock .messageInformationBox{
+        width: 98%;
+    }
+    .tableOfAddtendenceBlock table{
+        min-width: 220px;
+    }
+    .allTeacherInfoContain1 .allInfoInternalBox2{
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .allInfoInternalBox2 .smallBoxAttend{
+        flex-direction: row;
+    }
+    .allInfoInternalBox2 button{
+        font-size: 14px;
+        margin-left: 70%;
+    }
+    .allInfoInternalBox2 >span{
+        min-width: 90% !important;
+    }
+}

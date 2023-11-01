@@ -1,0 +1,378 @@
+/* @import url('newSch.css'); */
+
+.loaderMain{
+    width: 100%;
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background-color: rgb(9, 9, 9);
+    opacity: 0.9;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+  }
+  .loaderContainer{
+    position: relative;
+    top: 42%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .loaderContainer img{
+    position: absolute;
+  }
+  ::-webkit-scrollbar {
+    width: 13px;
+  }
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 15px grey; 
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(73, 251, 209); 
+    border: 2px solid black;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #5a8eff; 
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  .icon-bar {
+      display: block;
+      position: fixed;
+      top: 55%;
+      right: 0;
+      transform: translateY(-50%);
+      z-index: 5;
+    }
+    .icon-bar a {
+      display: block;
+      text-align: center;
+      padding: 8px;
+      transition: all 0.3s ease;
+      color: white;
+      font-size: 20px;
+    }
+    .icon-bar a:hover {
+      background-color: #98ffee;
+      color: black !important;
+    }
+    .facebook {
+      background: #5b83da;
+      border-top-left-radius: 8px;
+      color: white;
+    }
+    .twitter {
+      background: #55ACEE;
+      color: white;
+    }
+    .google {
+      background: #f07160;
+      color: white;
+    }
+    .linkedin {
+      border-bottom-left-radius: 8px;
+      background: #3b3b3b;
+      color: rgb(255, 255, 255) !important;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .youtube {
+      background: #ff0f0f;
+      color: white;
+    }
+    .cardOfInfo {
+      background-color: white;
+      box-shadow: 0 0 15px 7px rgba(0,0,0,0.2) inset;
+      transition: 0.5s;
+      width: 500px;
+      height: 180px;
+      margin: 5px 20px;
+      display: flex;
+      flex-direction: row;
+    }
+    .cardOfInfo:hover {
+      box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+      transform:scale(1.02)
+    }
+    .containerOfDetails {
+      padding: 2px 16px;
+    }
+    .twoCardConatinTogether{
+      width: 100%;
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+    .toggleClassList{
+      box-shadow: 0 0 16px 5px rgba(0,0,0, 0.5);
+      height: 61px;
+    }
+    .toggleAnimation{
+      position: relative;
+      animation: toggleAnim 0.5s ;
+      animation-timing-function: ease-in;
+      animation-fill-mode: forwards;
+    }
+    .footerToggleAnimation{
+      position: relative;
+      animation: footerToggleAnimation 0.6s ;
+      animation-timing-function: ease-in;
+      animation-fill-mode: forwards;
+    }
+    .displayAndFetchDivBlock .aboutUsButtonInfo{
+      width: 100%;
+      top: 0;
+      padding: 40px 0px;
+      position: relative;
+      text-align: center;
+    }
+    .aboutUsButtonInfo .somethingTextAboutus{
+      width: 100%;
+      height: auto;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+    .somethingTextAboutus .aboutusText01{ 
+      width: 900px;
+      margin: 18px 20px;
+      border-bottom: 1.5px solid rgb(212, 212, 212);
+      display: flex;
+      float: left;
+      
+    }
+  .textDivInternal{
+    margin: 5px 10px;
+    text-align: left;
+  }
+  .textDivInternal p{
+    font-size: 14px;
+    color: rgb(113, 113, 113);
+  }
+  .footerClassLast{
+    position: relative;
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    background: linear-gradient(to right, #33ccff 0%, #00ffcc 50%);
+  }
+  .footerClassLast .footerBoxEnd{
+    width: 350px;
+    height: 125px;
+    margin: 20px 70px;
+    padding-left: 15px;
+    display: flex;
+    justify-content: center;
+  }
+  .footerClassLast .footerBoxEnd a i{
+      margin: 15px 15px;
+      padding: 10px 13px;
+      font-size: 15px;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 50%;
+      animation: iconAnimat 2s ease-in infinite forwards;
+  }
+  .footerClassLast .footerBoxEnd a:nth-child(1n) i{
+    animation-delay: 0.2s;
+  }
+  .footerClassLast .footerBoxEnd a:nth-child(2n) i{
+    animation-delay: 0.6s;
+  }
+  .footerClassLast .footerBoxEnd a:nth-child(3n) i{
+    animation-delay: 1s;
+  }
+  .footerClassLast .footerBoxEnd a:nth-child(4n) i{
+    animation-delay: 1.4s;
+  }
+  .footerClassLast .footerBoxEnd a:nth-child(5n) i{
+    animation-delay: 1.8s;
+  }
+  .mainContactBox {
+    width: 100%;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .contactBoxText01{
+    /* border: 1px solid black; */
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(125, 255, 251);
+    text-align: center;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+  }
+  .contactBoxText02 {
+    width: 70%;
+    padding: 40px;
+    border-bottom: 1.5px solid rgb(226, 226, 226);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+  }
+  
+  .contactBoxText02 span {
+    width: 355px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .contactBoxText02 p {
+    font-size: 13.4px;
+    color: rgb(130, 126, 126);
+    line-height: 0px;
+    word-spacing: -0.8px;
+  }
+  
+  .googleMapText {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+  .googleMapText .googleMapsLocation{
+    margin-bottom: 40px;
+    width: 100%;
+    height: 400px;
+  }
+  .selectOpt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  #login-class-select {
+    width: 80%;
+    background-color: white;
+    color: rgb(109, 109, 109);
+    padding: 3px 5px 3px;
+    font-size: 17px;
+    margin: 10px;
+    outline: none;
+    border: 0.7px solid rgb(188, 188, 188);
+  }
+  .login-input-class-1 {
+    width: 80%;
+    font-size: 17px;
+    padding: 3px 5px 3px;
+    margin: 10px;
+    outline: none;
+    border: 0.7px solid rgb(188, 188, 188);  
+  }
+  #login-class-select:focus, .login-input-class-1:focus{
+    border: 1px solid rgb(94, 219, 196);
+    box-shadow: 0 0 4px 2px rgb(94, 219, 196);
+  }
+  #login-forgot-pass {
+    color: #ff1c1c;
+    font-size: 17px;
+    text-decoration: none;
+    left: 0;
+  }
+  .admissionMainBlock .containBlockInternal .circularButton button{
+    width: 15px;
+    height: 15px;
+    /* border: 1px solid black; */
+    border-radius: 50%;
+    background-color: #45fcff;
+  }
+  /* -------------animtion during forgot password--------- */
+  .toggleloginFormAnim{
+    animation: toggleloginFormAnim 2s ;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+  }
+  @keyframes toggleloginFormAnim {
+    0% {visibility: 0};
+    50% {visibility: 0.5};
+    100% {visibility: 1};
+  }
+    @keyframes iconAnimat {
+      0% {transform: translateY(0px);}
+      65% {transform: translateY(-4px)}
+      75% {transform: translateY(12px);  box-shadow: 0 4px 4px -2px #000000;}
+      85% {transform: translateY(4px)}
+      100% {transform: translateY(0px)}
+    }
+    @keyframes toggleAnim {
+      0% {height: 60px; box-shadow: 0 0 16px 5px rgba(0,0,0, 0.5);}
+      25% {height: 62.5px; box-shadow: 0 0 12px 4.25px rgba(0,0,0, 0.5);}
+      50% {height: 65px; box-shadow: 0 0 8px 2px rgba(0,0,0, 0.5);}
+      75% {height: 67.5px; box-shadow: 0 0 4px 1.25px rgba(0,0,0, 0.5);}
+      100% {height: 71px; box-shadow: 0 0 0px 0px rgba(0,0,0, 0.5);}
+    }
+    @keyframes footerToggleAnimation {
+      0% {height: 61px;}
+      20% {height: 62px;}
+      40% {height: 64px;}
+      60% {height: 66px;}
+      80% {height: 68px;}
+      100% {height: 70px;}
+    }
+    @media only screen and (max-width: 1000px) {
+      .somethingTextAboutus .aboutusText01{ 
+        background-color: rgb(242, 242, 242);
+        width: 90%;
+      }
+    }
+    @media only screen and (max-width: 780px) {
+      .cardOfInfo{
+          width: 90%;
+          height: 220px;
+          margin-bottom: 30px;
+      }
+      .somethingTextAboutus{
+        width: 100%;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      .twoCardConatinTogether{
+          width: 100%;
+          margin-bottom: 0px;
+          display: flex;
+          flex-direction: column;
+        }
+      .nav-element{
+        height: 70px;
+      }
+      .aboutUsButtonInfo{
+        padding: 14px 5px;
+      }
+      .footerClassLast{
+        flex-direction: column;
+      }
+      .footerClassLast .footerBoxEnd{
+        height: 70px;
+        width: 100%;
+        margin:20px;
+      }
+      .footerBoxEnd a i{
+        margin: 15px 10px;
+        padding: 10px 13px;
+        font-size: 17px;
+      }
+      .contactBoxText02 {
+        width: 95%;
+        flex-direction: column;
+      }
+      .contactBoxText02 {
+          align-items: center;
+          flex-direction: column;
+      }
+    }
+  
