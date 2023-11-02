@@ -70,7 +70,7 @@
                     <div class="leftCanvInsideBtn">
                         <!-- hidden buttons in left canvas -->
                         <button class="btnAllClass" onclick="internalButtons('AcademicRegistration')"> Academic Registration</button>
-                        <button class="btnAllClass" onclick="internalButtons('RegistrationReceipt')"> Registration Receipt</button>
+                        <button class="btnAllClass" onclick="downloadReg_exam('registrationRecipt')"> Registration Receipt</button>
                     </div>
                 </div>
                 <div class="leftOffNavDivs">
@@ -109,7 +109,7 @@
                     <span onclick="allButtonOfNav(6)"><img src="websiteImages\icons8-rocket-50.png" width="22px" height="20px"><span class="closeBoxFont"> Result <span class="symbolSideMenu" style="font-weight: lighter;">&#10095;</span></span></span>
                     <div class="leftCanvInsideBtn">
                         <!-- hidden buttons in left canvas -->
-                        <button class="btnAllClass" onclick="internalButtons('MonthlyExam')">Monthly Exam Result</button>
+                        <button class="btnAllClass" onclick="downloadReg_exam('monthlyExam')">Monthly Exam Result</button>
                         <button class="btnAllClass" onclick="internalButtons('OnlineExam')">Online Exam Result</button>
                     </div>
                 </div>

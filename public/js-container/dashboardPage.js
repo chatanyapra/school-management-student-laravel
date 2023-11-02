@@ -152,18 +152,13 @@ function internalButtons(retrive){
         alert('Coming soon!');
     }
     else{
-        if(retrive=="RegistrationReceipt"){
-            window.open('registrationReceipt.php', "MsgWindow","location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=1220,height=900'");
-        }
-        else if(retrive=="OnlineExam"){
+        if(retrive=="OnlineExam"){
             alert('Coming soon!');
-        }
-        else if(retrive=="MonthlyExam"){
-            window.open('resultOfStudent.php', "MsgWindow","location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=1220,height=900'");
         }
         else{
             ajaxRetrieveDataNew(retrive);
         }
+        // window.open('registrationReceipt.php', "MsgWindow","location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=1220,height=900'");
     }
 }
 function ajaxRetrieveDataNew(retrive){
@@ -181,6 +176,33 @@ function ajaxRetrieveDataNew(retrive){
             console.log(pop);
         }
     });
+}
+// ---------------exam result recipt--------------
+function downloadReg_exam(passType){
+    // monthlyExam
+    // registrationRecipt
+    $page_name= '';
+    if(passType == 'registrationRecipt'){
+        $page_name = '/registration-receipt-page';
+    }
+    else if (passType == 'monthlyExam') {
+        $page_name = '/monthly-exam-page';
+    }
+    if ($page_name != '') {
+        $("#loaderMainId").show();
+        $.ajax({
+            url: $page_name,
+            method: 'get',
+            success: function (pop) {
+                $("#loaderMainId").hide();
+                console.log(pop);
+                // window.open($page_name, "MsgWindow","location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=1220,height=900'");
+            },
+            error: function(pop){
+                console.log(pop);
+            }
+        });
+    }
 }
 // -------------logout js--------------------
 

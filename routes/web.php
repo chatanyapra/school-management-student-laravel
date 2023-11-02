@@ -3,6 +3,7 @@
 use App\Http\Controllers\CaptchaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\ResultReceiptController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -28,3 +29,5 @@ Route::get('/user-password-change',[DashboardController::class, 'password_change
 Route::post('/password-check-change',[DashboardController::class, 'password_change_check_function']);
 
 Route::get('/log-out-user',[DashboardController::class, 'user_logout_func']);
+
+Route::get('/registration-receipt-page',[ResultReceiptController::class, 'result_receipt_function']);
