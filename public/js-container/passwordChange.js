@@ -9,40 +9,28 @@ function resetBtnFunc(){
     }
     paraAlert.innerHTML= "";
 }
-var errorarr= ['Old', 'New', 'Confirm'];
 function submitPassword(){
     var err= 0;
-    var x = document.forms['formSub']["oldPass"].value;
-    var y = document.forms['formSub']["newPass"].value;
-    var z = document.forms['formSub']["confPass"].value;
-    if(x=="" || x== null, y=="" || y== null, z=="" || z== null){
-        paraAlert.innerHTML= "* Enter all field's detail";
-        err++;
-    }
-    else if(err==0){
-        for(i=0; i<3; i++){
-            if(nullValue[i].value.length <= 5){
-                err++;
-                paraAlert.innerHTML= `* ${errorarr[i]} Password is very short`;
-                break;
-            }
-        }
-    }
-    if(newPass.value == confPass.value && err==0){
-        checkPassFun(confPass.value, newPass.value, oldPass.value);
-    }
-    else if(newPass.value != confPass.value && err==0){
-        paraAlert.innerHTML= "* New and Confirm password are not matching";
-    }
+    var old_password = document.forms['formSub']["oldPassword"].value;
+    var new_password = document.forms['formSub']["newPassword"].value;
+    var conf_password = document.forms['formSub']["confirmPassword"].value;
+    checkPassFun(conf_password, new_password, old_password);
 }
 function checkPassFun(password, newPass, oldPass){
+        $.ajaxSetup({
+            headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token-password-change"]').attr('content')
+            }
+        });
         $.ajax({
-            url: 'queryRunningPage.php',
+            url: '/password-check-change',
             method: 'post',
-            data: { passValue: password, newPassVal: newPass, oldPassVal: oldPass},
+            data: { confirmPassword: password, newPassword: newPass, oldPassword: oldPass},
             success: function (pop) {
-                console.log(pop);
                 $('#paraAlert').html(pop);
+                if (pop.success != '') {
+                    $('#paraAlert').html(pop.success);
+                }
             },
             error: function(pop){
                 console.log(pop);

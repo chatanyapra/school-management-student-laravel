@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class DashboardController extends Controller
 {
@@ -136,10 +137,41 @@ class DashboardController extends Controller
     }
     function password_change_func(){
         $user_regno= session()->get('user_reg_no');
-        $user_class= session()->get('user_class');
-        $user_class_DB= session()->get('user_class').'db';
-        $class_name= str_replace('_', '-', $user_class);
-        return view('big-component-files/password-change-page', compact('user_regno', 'class_name'));
+        return view('big-component-files/password-change-page', compact('user_regno'));
+    }
+    function password_change_check_function(Request $request){
+        $errorMessage ='';
+        $validator = Validator::make($request->all(),[
+            'oldPassword'=>'required',
+            'newPassword'=>'required|min:5',
+            'confirmPassword'=> 'required|min:5|same:newPassword',
+        ]);
+        if ($validator->fails()) {
+            $err= $validator->errors();
+            return view('small-files/show-alert-message', compact('errorMessage'))->with('err', $err);
+        }
+        else{  
+            $confirm_pass= $request->confirmPassword;
+            $old_pass=$request->oldPassword;
+            $user_regno= session()->get('user_reg_no');
+            $user_class_DB= session()->get('user_class').'db';
+
+            $user_detail= DB::table($user_class_DB)
+                ->select('password')
+                ->where('registrationNo', $user_regno)
+                ->first();
+            if ($user_detail->password == $old_pass) {
+                $update= DB::table($user_class_DB)
+                    ->where('registrationNo', $user_regno)
+                    ->update(['password' => $confirm_pass]);
+                $success = 'Password updated successfully.';
+                return response()->json($success);
+            }
+            else{
+                $errorMessage= 'Enter correct old password.';
+                return view('small-files/show-alert-message', compact('errorMessage'));
+            }
+        }
     }
     function user_logout_func(){
         return '/';

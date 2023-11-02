@@ -88,17 +88,9 @@ function checkPasswordRecover(param){
                 textMessage= "Please Enter Correct Password!";
             }
             else{
-                // console.log(loginCaptchaId.value, loginClassSelect.value, registrationNo.value, password.value);
                 ajaxAlertOnMain(loginCaptchaId.value,loginClassSelect.value, registrationNo.value, password.value);
             }
         }
-    // }
-    // if(textMessage != null ){
-    //     // alert(textMessage);
-    //     loginCaptchaId.value= null;
-    //     reloadCaptcha();
-    //     ajaxAlertOnMain(textMessage, null, null, null);
-    // }
 }
 function ajaxAlertOnMain(captcha, loginClassSelect, registrationNo, password){
     $.ajaxSetup({

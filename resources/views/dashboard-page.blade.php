@@ -47,7 +47,7 @@
                         <button class="buttonLogout2" onclick="changePassNew();">Change Password</button>
                     </div>
                 </div>
-                <span class="chipsideText">Papapa</span>
+                <span class="chipsideText">{{$user_about->Name}}</span>
             </div>
             <!-- -------------------------------------------------->
         </div>

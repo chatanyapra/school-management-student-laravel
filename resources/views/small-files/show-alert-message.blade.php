@@ -8,10 +8,12 @@
                 border-radius: 50%;background-color: #ffff80; color: red;">
             <img src="assets/websiteImages/icon-of-alert-login.png" alt="Alert!" width="60" height="60">
         </span>
-            <p style="padding: 10px 4px; margin-top: 30px; word-wrap: normal; text-align: center;">{{$errorMessage}}</p>
+            <p style="padding: 10px 4px; margin: 10px 0px; word-wrap: normal; text-align: center;">{{$errorMessage}}</p>
             @if (!empty($err))
                 @foreach ($err->all() as $error)
-                    <p style="padding: 10px 4px; word-wrap: normal; text-align: center;" class="text-danger">{{ $error }}</p>
+                    @if ($loop->iteration == 1)
+                        <p style=" word-wrap: normal; margin-bottom: 10px; text-align: center;" class="text-danger">{{ $error }}</p>
+                    @endif
                 @endforeach
             @endif
     </strong>

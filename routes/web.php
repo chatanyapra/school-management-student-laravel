@@ -25,4 +25,6 @@ Route::get('/select-att-user',[AttendanceController::class, 'select_attendance_s
 
 Route::get('/user-password-change',[DashboardController::class, 'password_change_func']);
 
+Route::post('/password-check-change',[DashboardController::class, 'password_change_check_function']);
+
 Route::get('/log-out-user',[DashboardController::class, 'user_logout_func']);
