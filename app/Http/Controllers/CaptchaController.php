@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class CaptchaController extends Controller
 {
@@ -46,6 +47,7 @@ class CaptchaController extends Controller
                     if(DB::table($table)->where('registrationNo', '=', $user_reg_no)->where('password', '=', $user_pass)->exists()){
                         session()->put('user_reg_no', $user_reg_no);
                         session()->put('user_class', $user_class);
+                        Session::put('lastActivity', time());
                         echo "<script type = 'text/javascript'> window.location.replace('/dashboard-home-page')</script>";
                     }
                     else{

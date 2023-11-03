@@ -65,4 +65,9 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
     ];
+    protected $routeMiddleware = [
+        'session.expired' => \App\Http\Middleware\SessionExpired::class,
+        'session_guard'=> \App\Http\Middleware\WebSessionSecurity::class,
+        'session_time'=> \App\Http\Middleware\CheckSessionExpiration::class
+    ];
 }

@@ -144,6 +144,7 @@ function ajaxFetchData(fetch){
     }
     else{
         alert("coming soon...");
+        $("#loaderMainId").hide();
     }
 
 }
@@ -158,7 +159,6 @@ function internalButtons(retrive){
         else{
             ajaxRetrieveDataNew(retrive);
         }
-        // window.open('registrationReceipt.php', "MsgWindow","location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=1220,height=900'");
     }
 }
 function ajaxRetrieveDataNew(retrive){
@@ -193,10 +193,9 @@ function downloadReg_exam(passType){
         $.ajax({
             url: $page_name,
             method: 'get',
-            success: function (pop) {
+            success: function () {
                 $("#loaderMainId").hide();
-                console.log(pop);
-                // window.open($page_name, "MsgWindow","location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=1220,height=900'");
+                window.open($page_name, "MsgWindow","location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=1220,height=900'");
             },
             error: function(pop){
                 console.log(pop);

@@ -25,7 +25,11 @@
              onclick="overlayoff()"></div>
             <div class="logoutClipDiv">
                 <div class="chip" onclick="logOutBlockFun();">
-                    <img src="" alt="Person" width="45" height="45">
+                    @if (file_exists(public_path("$user_about->photo")))
+                        <img src='{{URL::asset("$user_about->photo")}}' width="45" height="45" alt="Student" style="border-radius: 49%;">
+                    @else
+                        <img src='{{URL::asset('assets/websiteImages/reading-icon.png')}}' width="45" height="45" alt="Student" style="border-radius: 49%;">    
+                    @endif
                 
                     <button style="border: none; display: inline-flex; rotate: 90deg; 
                         margin-left: 0px; font-size: 14px; background-color: transparent;" >&#10095;
@@ -33,7 +37,11 @@
                 </div>
                 <div id="logoutBoxContainer" class="logoutBoxContainer" style="z-index: 1400;">
                     <div class="firstLogoutDiv">
-                        <img src='{{URL::asset("$user_about->photo")}}' width="60" height="60" alt="Student" style="border-radius: 49%;">
+                        @if (file_exists(public_path("$user_about->photo")))
+                            <img src='{{URL::asset("$user_about->photo")}}' width="60" height="60" alt="Student" style="border-radius: 49%;">
+                        @else
+                            <img src='{{URL::asset('assets/websiteImages/reading-icon.png')}}' width="60" height="60" alt="Student" style="border-radius: 49%;">    
+                        @endif
                         <span style="height: auto; margin-left: 40px;">
                             <div>{{$user_about->Name}}</div>
                             <div>{{$user_about->registrationNo}}</div>
@@ -61,12 +69,12 @@
         <div class="hidingAllCanvas">
             <div class="leftOffcanvasNav">
                 <div class="leftOffNavDivs">
-                    <span onclick="allButtonOfNav(0, 'Dashboard')"><img style="rotate: 1deg;" src="websiteImages\icons8-link-50.png" width="22px" height="20px"><span class="closeBoxFont" style="font-weight: 400;"> Dashboard <span class="symbolSideMenu" style="font-weight: lighter;"></span></span></span>
+                    <span onclick="allButtonOfNav(0, 'Dashboard')"><img style="rotate: 1deg;" src="{{URL::asset("assets/websiteImages/icons8-link-50.png")}}" width="22px" height="20px"><span class="closeBoxFont" style="font-weight: 400;"> Dashboard <span class="symbolSideMenu" style="font-weight: lighter;"></span></span></span>
                     <div class="leftCanvInsideBtn" style="margin:0; padding: 0;">
                     </div>
                 </div>
                 <div class="leftOffNavDivs">
-                    <span onclick="allButtonOfNav(1)"><img src="websiteImages\icons8-rocket-50.png" width="22px" height="20px"><span class="closeBoxFont">Registration <span class="symbolSideMenu" style="font-weight: lighter;">&#10095;</span></span></span>
+                    <span onclick="allButtonOfNav(1)"><img src="{{URL::asset("assets/websiteImages/icons8-rocket-50.png")}}" width="22px" height="20px"><span class="closeBoxFont">Registration <span class="symbolSideMenu" style="font-weight: lighter;">&#10095;</span></span></span>
                     <div class="leftCanvInsideBtn">
                         <!-- hidden buttons in left canvas -->
                         <button class="btnAllClass" onclick="internalButtons('AcademicRegistration')"> Academic Registration</button>
@@ -74,7 +82,7 @@
                     </div>
                 </div>
                 <div class="leftOffNavDivs">
-                    <span onclick="allButtonOfNav(2)"><img src="websiteImages\icons8-rocket-50.png" width="22px" height="20px"><span class="closeBoxFont"> Main Account<span class="symbolSideMenu" style="font-weight: lighter;">&#10095;</span></span></span>
+                    <span onclick="allButtonOfNav(2)"><img src="{{URL::asset("assets/websiteImages/icons8-rocket-50.png")}}" width="22px" height="20px"><span class="closeBoxFont"> Main Account<span class="symbolSideMenu" style="font-weight: lighter;">&#10095;</span></span></span>
                     <div class="leftCanvInsideBtn">
                         <!-- hidden buttons in left canvas -->
                         <button class="btnAllClass" onclick="internalButtons('myProfile')"> My Profile</button>
@@ -85,7 +93,7 @@
                     </div>
                 </div>
                 <div class="leftOffNavDivs">
-                    <span onclick="allButtonOfNav(3)"><img src="websiteImages\icons8-rocket-50.png" width="22px" height="20px"><span class="closeBoxFont"> My Faculty <span class="symbolSideMenu" style="font-weight: lighter;">&#10095;</span></span></span>
+                    <span onclick="allButtonOfNav(3)"><img src="{{URL::asset("assets/websiteImages/icons8-rocket-50.png")}}" width="22px" height="20px"><span class="closeBoxFont"> My Faculty <span class="symbolSideMenu" style="font-weight: lighter;">&#10095;</span></span></span>
                     <div class="leftCanvInsideBtn">
                         <!-- hidden buttons in left canvas -->
                         <button class="btnAllClass" onclick="internalButtons('MyAdvisor')"> My Class Advisor</button>
@@ -93,7 +101,7 @@
                     </div>
                 </div>
                 <div class="leftOffNavDivs">
-                    <span onclick="allButtonOfNav(4)"><img src="websiteImages\icons8-rocket-50.png" width="22px" height="20px"><span class="closeBoxFont"> Fee Details <span class="symbolSideMenu" style="font-weight: lighter;">&#10095;</span></span></span>
+                    <span onclick="allButtonOfNav(4)"><img src="{{URL::asset("assets/websiteImages/icons8-rocket-50.png")}}" width="22px" height="20px"><span class="closeBoxFont"> Fee Details <span class="symbolSideMenu" style="font-weight: lighter;">&#10095;</span></span></span>
                     <div class="leftCanvInsideBtn">
                         <!-- hidden buttons in left canvas -->
                         <button class="btnAllClass" onclick="internalButtons('AcademicFees')"> Academic Fees</button>
@@ -101,20 +109,20 @@
                     </div>
                 </div>
                 <div class="leftOffNavDivs">
-                    <span onclick="allButtonOfNav(5)"><img  style="rotate: 1deg;" src="websiteImages\icons8-link-50.png" width="22px" height="20px"><span class="closeBoxFont"> Club Registration <span class="symbolSideMenu" style="font-weight: lighter;"></span></span></span>
+                    <span onclick="allButtonOfNav(5)"><img  style="rotate: 1deg;" src="{{URL::asset("assets/websiteImages/icons8-link-50.png")}}" width="22px" height="20px"><span class="closeBoxFont"> Club Registration <span class="symbolSideMenu" style="font-weight: lighter;"></span></span></span>
                     <div class="leftCanvInsideBtn" style="margin:0; padding: 0;">
                     </div>
                 </div>
                 <div class="leftOffNavDivs">
-                    <span onclick="allButtonOfNav(6)"><img src="websiteImages\icons8-rocket-50.png" width="22px" height="20px"><span class="closeBoxFont"> Result <span class="symbolSideMenu" style="font-weight: lighter;">&#10095;</span></span></span>
+                    <span onclick="allButtonOfNav(6)"><img src="{{URL::asset("assets/websiteImages/icons8-rocket-50.png")}}" width="22px" height="20px"><span class="closeBoxFont"> Result <span class="symbolSideMenu" style="font-weight: lighter;">&#10095;</span></span></span>
                     <div class="leftCanvInsideBtn">
                         <!-- hidden buttons in left canvas -->
-                        <button class="btnAllClass" onclick="downloadReg_exam('monthlyExam')">Monthly Exam Result</button>
+                        <button class="btnAllClass" onclick="downloadReg_exam('monthlyExam')">Exam Result</button>
                         <button class="btnAllClass" onclick="internalButtons('OnlineExam')">Online Exam Result</button>
                     </div>
                 </div>
                 <div class="leftOffNavDivs">
-                <span onclick="allButtonOfNav(7, 'OnlineTest')"><img style="rotate: 1deg;" src="websiteImages\icons8-link-50.png" width="22px" height="20px"><span class="closeBoxFont" style="font-weight: 400;"> Online Test <span class="symbolSideMenu" style="font-weight: lighter;"></span></span></span>
+                <span onclick="allButtonOfNav(7, 'OnlineTest')"><img style="rotate: 1deg;" src="{{URL::asset("assets/websiteImages/icons8-link-50.png")}}" width="22px" height="20px"><span class="closeBoxFont" style="font-weight: 400;"> Online Test <span class="symbolSideMenu" style="font-weight: lighter;"></span></span></span>
                     <div class="leftCanvInsideBtn" style="margin:0; padding: 0;">
                     </div>
                 </div>
@@ -122,10 +130,9 @@
         </div>
         
             <!----- loader---- -->
-            <div class="loaderMain" id="loaderMainId" style="z-index: 6;">
+            <div class="loaderMain" id="loaderMainId" style="z-index: 4000 !important;">
                 <div class="loaderContainer">
                     <div class="spinner-border text-info" style="width: 50px; height: 50px; border-width: 7px;"></div>
-                    <img src="websiteImages/Infinity-1.2s-215px.gif" alt="LOADING..." width="80" height="80">
                 </div>
             </div>
         <div class="allContentMainDiv" id="showAllContentMainDiv">

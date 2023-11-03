@@ -25,22 +25,22 @@
             <img src="websiteImages\admission-image.jpg" width="150" height="160" alt="Image">
         </header>
         <table>
-            <tr><td colspan="2" style="text-align: right; padding: 10px 1px 25px 3px;">Date: ___/___/_______(dd/mm/yyyy)</td></tr>
+            <tr><td colspan="2" style="text-align: right; padding: 10px 1px 25px 3px;">Date: {{$formattedDate}}</td></tr>
             <tr>
-                <td>Student Name: {{$item->Name}} </td>
-                <td>Roll no: {{$item->Sno}}</td>
+                <td>Student Name: <strong>{{$item->Name}}</strong></td>
+                <td>Roll no: <strong>{{$item->Sno}}</strong></td>
             </tr>
             <tr>
-                <td style="text-transform: capitalize;">Class: {{$class_name}}</td>
-                <td>Email Id: {{$item->Email}}</td>
+                <td style="text-transform: capitalize;">Class: <strong>{{$class_name}}</strong></td>
+                <td>Email Id: <strong>{{$item->Email}}</strong></td>
             </tr>
             <tr>
-                <td>Date Of Birth: 07/02/2004</td>
-                <td>Gender: Male</td>
+                <td>Date Of Birth: <strong>07/02/2004</strong></td>
+                <td>Gender: <strong>Male</strong></td>
             </tr>
             <tr>
-                <td>Father's Name: {{$item->fatherName}}</td>
-                <td>Phone no: {{$item->phone}}</td>
+                <td>Father's Name: <strong>{{$item->fatherName}}</strong></td>
+                <td>Phone no: <strong>{{$item->phoneNo}}</strong></td>
             </tr>
             <tr><td colspan="2" style="text-align: left; padding: 10px 1px 25px 3px;">Address in detail: .......................................................................................................................................................</td></tr>
         </table>
@@ -60,7 +60,7 @@
             <tr >
                 <td style="text-align: center;">2</td>
                 <td>Tution Fees</td>
-                <td>22222</td>
+                <td>{{$item->total_fees}}</td>
                 <td>0</td>
             </tr>
             <tr>

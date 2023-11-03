@@ -174,6 +174,7 @@ class DashboardController extends Controller
         }
     }
     function user_logout_func(){
+        session()->forget(['user_reg_no', 'user_class', 'lastActivity']);
         return '/';
     }
 }

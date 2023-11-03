@@ -2,6 +2,7 @@ body{
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none;
+    font-family: Arial, sans-serif;
 }
 .registrationStatusMain{
     margin: 30px auto;
@@ -47,4 +48,28 @@ body{
     text-transform: uppercase;
     font-size: 14px;
     padding: 5px 0;
+}
+.profile_container{
+    width: 87.5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 0.5px solid black; 
+    margin-bottom: 15px; 
+    font-size: 13px;
+    position: relative;
+}
+.student_detail{
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 28px;
+}
+.student_image{
+    width: 120px;
+    height: 150px;
+    border: 1px solid black;
+    position: relative;
+    margin-right: 15px;
 }
