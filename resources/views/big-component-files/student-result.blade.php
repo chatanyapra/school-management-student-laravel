@@ -44,11 +44,11 @@
                 </table>
                 <table style="width: 370px; text-transform: capitalize;">
                     <tr>
-                        </tr><tr><td>{{$user_info->Name}}</td></tr>
+                        <tr><td>{{$user_info->Name}}</td></tr>
                         <tr><td>{{$user_info->Sno}}</td></tr>
     
                         <tr><td > {{$class_name}}</td></tr>
-                        <tr><td>Attendence: </td></tr>
+                        <tr><td>{{number_format($total_att, 2)}} %</td></tr>
     
                         <tr><td>{{$user_info->fatherName}} </td></tr>
                         <tr><td>{{$user_info->phoneNo}}</td></tr>

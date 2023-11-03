@@ -32,8 +32,9 @@ class ResultReceiptController extends Controller
                             ->leftJoin("$class_result", "$class_result.student_regno", "=", "$user_class_DB.registrationNo")
                             ->where("$user_class_DB.registrationNo","=", $user_regno)
                             ->where("$class_result.exam_type", "=", "half-yearly")
-                            ->first()
+                            ->get()
                         ;
-        return view('big-component-files/student-result', compact('student_detail', 'class_name'));
+            $total_att= session()->get('net_attendance');
+        return view('big-component-files/student-result', compact('student_detail', 'class_name', 'total_att'));
     }
 }

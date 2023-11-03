@@ -6,7 +6,7 @@
     <body>
         <div class="MyadvisorMain">
             <header>
-                <img src="websiteImages\icons8-lock-64.png" style="margin: 2px 20px; padding: 2px 0;" class="hideBox" alt="image" width="40" height="40">
+                <img src="{{URL::asset('assets/websiteImages/icons8-lock-64.png')}}" style="margin: 2px 20px; padding: 2px 0;" class="hideBox" alt="image" width="40" height="40">
                 <h5>Change Your Password</h5>
             </header>
             <form name="formSub" onsubmit="event.preventDefault();">

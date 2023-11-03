@@ -70,6 +70,7 @@ class DashboardController extends Controller
             $net_class_held += $at->sub;
         }
         $net_att=  number_format((($present_user * 100) / $net_class_held), 2);
+        session()->put('net_attendance', $net_att);
 
         return view('big-component-files/user-front-page', compact('message', 'query', 'attendance_subject', 'class_name', 'net_att', 'total_att_sub'));
     }
