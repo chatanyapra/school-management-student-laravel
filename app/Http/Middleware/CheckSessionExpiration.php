@@ -19,7 +19,8 @@ class CheckSessionExpiration
         if (Session::has('lastActivity')) {
             // echo 'working 2';
             $lastActivity = Session::get('lastActivity');
-            $sessionTimeout = config('session.lifetime') * 60; // Session lifetime in seconds
+            $sessionTimeout = config('session.lifetime') * 60; 
+            // Session lifetime in seconds
 
             if (time() - $lastActivity > $sessionTimeout) {
                 // Session has expired
