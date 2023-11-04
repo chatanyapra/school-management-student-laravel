@@ -27,14 +27,13 @@ class DashboardController extends Controller
         $class_result= $user_class.'result';
         $class_name= str_replace('_', '-', $user_class);
 
-        $query=  DB::table($user_class_DB)
-        ->select("$user_class_DB.Sno", "$user_class_DB.Name", "$user_class_DB.photo", "$user_class_DB.fatherName", "$user_class_DB.Email", "$user_class_DB.phoneNo",
-                "$user_class_DB.ClassRegistration", "$class_result.exam_type", "$class_result.net_result_percent")
-        ->leftJoin("$class_result", "$class_result.student_regno", "=", "$user_class_DB.registrationNo")
-        ->where("$user_class_DB.registrationNo","=", $user_regno)
-        ->where("$class_result.exam_type", "=", "half-yearly")
-        ->get();    
-
+        $query = $this->user_info_function();
+    
+        $result_user= $this->result_function();
+    
+        // dump($query);
+        // dump($result_user);
+        
         $total_att_sub= DB::table('sub_teacher')
             ->select('sub_teacher.sub_name', 'teachersdb.Name', 'teachersdb.photo')
             ->leftJoin('teachersdb', 'teachersdb.registrationNo', '=', 'sub_teacher.regno_teach')
@@ -65,14 +64,18 @@ class DashboardController extends Controller
 
         $present_user=0;
         $net_class_held=0;
-        foreach($attendance_subject as $at){
-            $present_user += $at->pre;
-            $net_class_held += $at->sub;
+        $net_att=0;
+        if (!empty($attendance_subject)) {
+            foreach($attendance_subject as $at){
+                $present_user += $at->pre;
+                $net_class_held += $at->sub;
+            }
+            $net_att=  number_format((($present_user * 100) / $net_class_held), 2);
         }
-        $net_att=  number_format((($present_user * 100) / $net_class_held), 2);
         session()->put('net_attendance', $net_att);
 
-        return view('big-component-files/user-front-page', compact('message', 'query', 'attendance_subject', 'class_name', 'net_att', 'total_att_sub'));
+        return view('big-component-files/user-front-page', compact('message', 'query', 'attendance_subject',
+                                                                'result_user' ,'class_name', 'net_att', 'total_att_sub'));
     }
     function dashboard_academic_reg_func(Request $request){
         $user_regno= session()->get('user_reg_no');
@@ -91,15 +94,10 @@ class DashboardController extends Controller
             ->get()
         ;
 
-        $student_detail= DB::table($user_class_DB)
-            ->select("$user_class_DB.Sno", "$user_class_DB.Name", "$user_class_DB.photo", "$user_class_DB.fatherName", "$user_class_DB.Email", "$user_class_DB.phoneNo",
-                    "$user_class_DB.ClassRegistration", "$user_class_DB.total_fees", "$user_class_DB.feesSubmitted", "$class_result.exam_type", "$class_result.net_result_percent")
-            ->leftJoin("$class_result", "$class_result.student_regno", "=", "$user_class_DB.registrationNo")
-            ->where("$user_class_DB.registrationNo","=", $user_regno)
-            ->where("$class_result.exam_type", "=", "half-yearly")
-            ->get()
-        ;
-
+        $query = $this->user_info_function();
+    
+        $result_user= $this->result_function();
+            
         $url='';
         $errorMessage= '';
         if($request->datavalues == 'AcademicRegistration'){
@@ -128,7 +126,7 @@ class DashboardController extends Controller
             $url= 'small-files/transport-fees';
         }
         if(!empty($url)){
-            return view($url, compact('user_data', 'class_name', 'student_detail'));
+            return view($url, compact('user_data', 'class_name', 'query', 'result_user'));
         }
         else{
             $errorMessage = 'Error Occured!';
@@ -174,8 +172,34 @@ class DashboardController extends Controller
             }
         }
     }
+    function result_function(){
+        $user_regno= session()->get('user_reg_no');
+        $user_class= session()->get('user_class');
+        $user_class_DB= session()->get('user_class').'db';
+        $class_result= $user_class.'result';
+        $class_name= str_replace('_', '-', $user_class);
+
+        $result_user= DB::table($class_result)->select('net_result_percent')->where("$class_result.exam_type", "=", "half-yearly")
+            ->where("$class_result.student_regno", "=", "$user_regno")
+            ->first();
+        return $result_user;
+    }
+    function user_info_function(){
+        $user_regno= session()->get('user_reg_no');
+        $user_class= session()->get('user_class');
+        $user_class_DB= session()->get('user_class').'db';
+        $class_result= $user_class.'result';
+        $class_name= str_replace('_', '-', $user_class);
+
+        $query = DB::table($user_class_DB)
+        ->select("$user_class_DB.Sno", "$user_class_DB.Name", "$user_class_DB.photo", "$user_class_DB.fatherName", "$user_class_DB.Email", "$user_class_DB.phoneNo",
+            "$user_class_DB.ClassRegistration")
+        ->where("$user_class_DB.registrationNo", "=", $user_regno)->get();
+    
+        return $query;
+    }
     function user_logout_func(){
-        session()->forget(['user_reg_no', 'user_class', 'lastActivity']);
+        session()->forget(['user_reg_no', 'user_class', 'lastActivity', 'net_attendance']);
         return '/';
     }
 }
