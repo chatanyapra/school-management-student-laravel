@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('login-page');
 });
+Route::get('/first-home-page', function () {
+    echo "<script type = 'text/javascript'> window.location.replace('/')</script>";
+});
 Route::get('/captchaReload',[CaptchaController::class, 'captchaReload']);
 Route::get('/forgot-password-page',[function(){return view('small-files/forgotPassword');}]);
 Route::get('/login-page-box',[function(){return view('small-files/login-box');}]);
@@ -34,5 +37,6 @@ Route::get('/registration-receipt-page',[ResultReceiptController::class, 'result
 
 Route::get('/monthly-exam-page',[ResultReceiptController::class, 'exam_result_function'])->middleware(['session_guard', 'session_time']);
 
-Route::get('/session-expired', function () {return view('login-page');})->name('session.expired');
+
+
 

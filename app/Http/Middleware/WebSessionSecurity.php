@@ -16,12 +16,9 @@ class WebSessionSecurity
     public function handle(Request $request, Closure $next): Response
     {
         if (session()->has('user_reg_no') && session()->has('user_class')) {
-            // echo 'working 1';
             return $next($request); 
         } else {
-            // $errorMessage= 'Your session has been expired! 1';
-            // echo $errorMessage;
-            return redirect('/');
+            return redirect('/first-home-page');
         }
         
     }

@@ -1,5 +1,5 @@
 
-@foreach ($student_detail as $item)
+@foreach ($query as $item)
     <div class="topContainContact"><h3>Personal Details</h3></div>
     <div class="mainDivOfContactInfo">
         <section class="containContact-info">

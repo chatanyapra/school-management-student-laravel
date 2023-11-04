@@ -154,13 +154,13 @@ body{
     overflow: hidden;
     margin: 20px auto;
     /* padding: 20px 0; */
+    background-color: #ffffff;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     box-shadow: 0 0 10px 1px rgba(156, 156, 156, 0.2), 0 6px 20px 0 rgba(158, 158, 158, 0.19);
 }
 .allTeacherInfoContain1 .allInfoInternalBox1{
     width: 35%;
-    background-color: #ffffff;
     margin: 0 auto;
     padding: 10px 25px;
     display: flex;
@@ -169,7 +169,6 @@ body{
 }
 .allTeacherInfoContain1 .allInfoInternalBox2{
     width: 65%;
-    background-color: #ffffff;
     margin: 0 auto;
     padding: 10px 25px;
     display: flex;
@@ -228,7 +227,7 @@ body{
         min-width: 210px !important;
     }
 }
-@media only screen and (max-width: 1006px) {
+@media only screen and (max-width: 1126px) {
     .allTeacherInfoContain1{
         flex-direction: column;
     }

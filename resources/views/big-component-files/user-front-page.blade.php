@@ -37,16 +37,16 @@
             </span>
             <h4>Attendence</h4>
         </div>
+@endforeach
         <div class="studentDetailBox">
             <span>
-                <h2>{{number_format($detail->net_result_percent, 0)}}%</h2>
+                <h2>{{$result_user ? $result_user : 0 }}%</h2>
                 <div class="progress" style="height: 7px; background-color: rgb(230, 224, 224); border-radius: 20px;">
-                    <div class="progress-bar" style="width:80%; height: 7px;"></div>
+                    <div class="progress-bar" style="width:{{$result_user ? $result_user : 0 }}%; height: 7px;"></div>
                 </div>
             </span>
             <span><h4>Result Percent</h4><small  class="result_percent">Half-yearly</small></span>
         </div>
-@endforeach
         <div class="studentDetailBox">
             <span>
                 <h2>40%</h2>
@@ -66,6 +66,7 @@
                     $arr= array();
                     $num= 0;
                 @endphp
+                @if (!empty($total_att_sub)) 
                     @foreach ($total_att_sub as $net_sub)
                         @foreach ($attendance_subject as $att_took)  
                             @if ($net_sub->sub_name == $att_took->sub_name)
@@ -82,6 +83,7 @@
                             @endif
                         @endforeach
                     @endforeach
+                @endif
                     @foreach ($total_att_sub as $net_sub)
                         @if(!in_array($net_sub->sub_name, $arr))
                             <tr>
@@ -143,7 +145,6 @@
         </div>
     </div>
     <!-- ----------created a div block of teacher of studemts------------------ -->
-    <!-- <div class="allTeacherInfoBoxMain"> -->
     <Header
         style="text-align: center; color: blue; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
         <h4>Academic Details</h4>
@@ -154,9 +155,6 @@
             <span style="display: flex;"><img src="{{$att_took->photo}}" width="60px" height="50px"
                     style="border-radius: 50%; margin-right: 20px;" alt="Teacher">
                 <span><b>{{$att_took->Name}}</b><br> {{$att_took->sub_name}}</span>
-            </span>
-            <span>
-                Additional Info+
             </span>
         </span>
         <span class="allInfoInternalBox2">
@@ -177,8 +175,7 @@
                     <p>Leave: <span style="background-color: #ff0000;">{{($att_took->sub - $att_took->pre)}}</span></p>
                 </span>
             </span>
-            <button type="submit" onclick="buttonAboutYouFunc(this)"><span
-                    style="display:inline-block; transform: rotate(90deg);">&#10148; </span> More</button>
+            <button type="button" style="display: block; min-width: 50px;" onclick="buttonAboutYouFunc(this)">More</button>
         </span>
     </div>
 @endforeach
@@ -189,9 +186,6 @@
                 <span style="display: flex;"><img src="{{$net_sub->photo}}" width="60px" height="50px"
                         style="border-radius: 50%; margin-right: 20px;" alt="Teacher">
                     <span><b>{{$net_sub->Name}}</b><br> {{$net_sub->sub_name}}</span>
-                </span>
-                <span>
-                    Additional Info+
                 </span>
             </span>
             <span class="allInfoInternalBox2">
@@ -212,17 +206,12 @@
                         <p>Leave: <span style="background-color: #ff0000;">0</span></p>
                     </span>
                 </span>
-                <button type="submit" onclick="buttonAboutYouFunc(this)"><span
-                        style="display:inline-block; transform: rotate(90deg);">&#10148; </span> More</button>
+                <button type="submit" onclick="buttonAboutYouFunc(this)"
+                    style="display: block; min-width: 50px;">More</button>
             </span>
         </div>
     @endif
 @endforeach
-    <?php 
-        //     }
-        // }
-    ?>
-    <!-- </div> -->
 
     {{-- <script src="{{URL::asset('js-container/dashboardPage.js')}}"></script> --}}
     <script>

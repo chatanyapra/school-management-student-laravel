@@ -23,7 +23,7 @@
             </span>
             <img src="websiteImages\admission-image.jpg" width="160" height="160" alt="Image">
         </header>
-    @foreach ($student_detail as $user_info)
+    @foreach ($query as $user_info)
         
     <div class="profile_container">
         <strong style="font-size: 22px; padding-top: 7px; margin-left:40%; position: absolute; top: 0;"> Student Profile </strong>

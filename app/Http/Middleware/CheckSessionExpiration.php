@@ -17,16 +17,14 @@ class CheckSessionExpiration
     public function handle(Request $request, Closure $next): Response
     {
         if (Session::has('lastActivity')) {
-            // echo 'working 2';
             $lastActivity = Session::get('lastActivity');
-            $sessionTimeout = config('session.lifetime') * 60; 
+            $sessionTimeout = config('session.lifetime') * 100; 
             // Session lifetime in seconds
 
             if (time() - $lastActivity > $sessionTimeout) {
                 // Session has expired
                 Session::flush(); // Clear the session data
-                // echo 'nottttt work 2';
-                return redirect()->route('session.expired');
+                return redirect('/first-home-page');
             }
         }
 
